@@ -23,7 +23,7 @@ This bracket } should not brake it
 
 " EPIGEN_DEL_BLOCK_TEST }
 
-" EPIGEN_DEL_BLOCK_TEST2 DEACTIVATED {
+" EPIGEN_DEL_BLOCK_TEST2 ACTIVE {
 " " EPIGEN_DEL_BLOCK_TEST {
 
 " " This block should stay as it is

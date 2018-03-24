@@ -5,9 +5,9 @@
 
 This line should stay uncommented
 
-" This line should become uncommented " EPIGEN_DEL_LINE_TEST DEACTIVATED
+" This line should become uncommented " EPIGEN_DEL_LINE_TEST ACTIVE
 
-" " This line should become uncommented by one layer " EPIGEN_DEL_LINE_TEST DEACTIVATED
+" " This line should become uncommented by one layer " EPIGEN_DEL_LINE_TEST ACTIVE
 
 " this line should not change " EPIGEN_DEL_LINE_TEST
 

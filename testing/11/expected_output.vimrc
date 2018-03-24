@@ -5,7 +5,7 @@ This line should stay commented uncommented
 
 " This line should stay commented
 
-" EPIGEN_DEL_BLOCK_TEST DEACTIVATED {
+" EPIGEN_DEL_BLOCK_TEST ACTIVE {
 
 " This block should become commented
 " ....
@@ -25,7 +25,7 @@ This line should stay commented uncommented
 " " EPIGEN_DEL_BLOCK_TEST }
 " EPIGEN_DEL_BLOCK_TEST2 }
 
-" EPIGEN_DEL_BLOCK_TEST DEACTIVATED {
+" EPIGEN_DEL_BLOCK_TEST ACTIVE {
 " " EPIGEN_DEL_BLOCK_TEST2 {
 
 " " This block should become commented even more

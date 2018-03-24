@@ -7,8 +7,6 @@ This line should stay uncommented
 
 This line should become uncommented " EPIGEN_DEL_LINE_TEST
 
-This line should stay uncommented " EPIGEN_DEL_LINE_TEST ACTIVE
-
 " EPIGEN_DEL_BLOCK_TEST {
 
 This block should become uncommented

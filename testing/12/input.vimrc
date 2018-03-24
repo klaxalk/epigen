@@ -3,7 +3,7 @@
 
 " This line should stay commented
 
-" EPIGEN_DEL_BLOCK_TEST DEACTIVATED {
+" EPIGEN_DEL_BLOCK_TEST ACTIVE {
 
 " This block should become uncommented
 " ....
@@ -23,7 +23,7 @@
 
 " EPIGEN_DEL_BLOCK_TEST }
 
-" EPIGEN_DEL_BLOCK_TEST2 DEACTIVATED {
+" EPIGEN_DEL_BLOCK_TEST2 ACTIVE {
 " " EPIGEN_DEL_BLOCK_TEST {
 
 " " This block should stay as it is
