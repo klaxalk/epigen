@@ -201,9 +201,28 @@ if !hasmapto('<Plug>Commentary') || maparg('gc','n') ==# '' || maparg('gcb','n')
 endif
 
 " Define the rules for commenting various file types
+
+" The pattern is interpreted like mostly used in file names:
+" 	*	matches any sequence of characters; Unusual: includes path
+" 		separators
+" 	?	matches any single character
+" 	\?	matches a '?'
+" 	.	matches a '.'
+" 	~	matches a '~'
+" 	,	separates patterns
+" 	\,	matches a ','
+" 	{ }	like \( \) in a |pattern|
+" 	,	inside { }: like \| in a |pattern|
+" 	\}	literal }
+" 	\{	literal {
+" 	\\\{n,m\}  like \{n,m} in a |pattern|
+" 	\	special meaning like in a |pattern|
+" 	[ch]	matches 'c' or 'h'
+" 	[^ch]   match any character but 'c' and 'h'
+
 autocmd BufRead *.py setlocal commentstring=\#\ %s
 autocmd BufRead *.sh setlocal commentstring=\#\ %s
 autocmd BufRead *.Xresources setlocal commentstring=\!\ %s
 autocmd BufRead *.vimrc setlocal commentstring=\"\ %s
 autocmd BufRead *.bashrc setlocal commentstring=\#\ %s
-autocmd BufRead */.i3/config setlocal commentstring=\#\ %s
+autocmd BufRead */.i3/config*,*/i3/config* setlocal commentstring=\#\ %s
