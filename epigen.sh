@@ -25,7 +25,7 @@ Arguments:
   # where is the epigen.vimrc file
   eval VIMRC_PATH="$EPIGEN_SOURCE_LOC/epigen.vimrc"
   if [ ! -e "$VIMRC_PATH" ]; then
-    echo "The epigen.vimrc file does not exists!"
+    echo "The epigen.vimrc file does not exist!"
     echo "Debug: $VIMRC_PATH"
     return 1
   fi
