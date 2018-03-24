@@ -16,11 +16,11 @@ source ../../epigen.sh
 
 # do the thing 
 cp "$INPUT_FILE" "$TEST_OUTPUT_FILE"
-epigen reduction -s "$TEST_OUTPUT_FILE" TEST3
-epigen reduction -s "$TEST_OUTPUT_FILE" TEST2
-epigen reduction -s "$TEST_OUTPUT_FILE" TEST
+epigen deletion -s "$TEST_OUTPUT_FILE" TEST3
+epigen deletion -s "$TEST_OUTPUT_FILE" TEST2
+epigen deletion -s "$TEST_OUTPUT_FILE" TEST
 
-epigen reduction -A "$TEST_OUTPUT_FILE"
+epigen deletion -A "$TEST_OUTPUT_FILE"
 
 # compare the output
 diff "$TEST_OUTPUT_FILE" "$EXPECTED_OUTPUT_FILE"

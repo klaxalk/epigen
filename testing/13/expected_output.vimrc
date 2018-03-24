@@ -5,35 +5,35 @@
 
 This line should stay uncommented
 
-This line should become uncommented " EPIGEN_LINE_TEST
+This line should become uncommented " EPIGEN_DEL_LINE_TEST
 
-This line should stay uncommented " EPIGEN_LINE_TEST
+This line should stay uncommented " EPIGEN_DEL_LINE_TEST
 
-" EPIGEN_BLOCK_TEST {
+" EPIGEN_DEL_BLOCK_TEST {
 
 This block should become uncommented
 ....
 
 This bracket } should not brake it
 
-" EPIGEN_BLOCK_TEST }
+" EPIGEN_DEL_BLOCK_TEST }
 
 
-" EPIGEN_BLOCK_TEST {
+" EPIGEN_DEL_BLOCK_TEST {
 
 This line should become uncommented
 
-" EPIGEN_BLOCK_TEST2 {
+" EPIGEN_DEL_BLOCK_TEST2 {
 
 " This block should become less commented
 " ....
 
 " This bracket } should not brake it
 
-" EPIGEN_BLOCK_TEST2 }
+" EPIGEN_DEL_BLOCK_TEST2 }
 
-" EPIGEN_BLOCK_TEST }
+" EPIGEN_DEL_BLOCK_TEST }
 
-" EPIGEN_BLOCK_TEST {
+" EPIGEN_DEL_BLOCK_TEST {
 this is a short block which was commented
-" EPIGEN_BLOCK_TEST }
+" EPIGEN_DEL_BLOCK_TEST }

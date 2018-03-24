@@ -5,8 +5,8 @@
 
 This line should stay uncommented
 
-This line should become commented " EPIGEN_LINE_TEST ACTIVE
+This line should become commented " EPIGEN_ADD_LINE_TEST ACTIVE
 
-" this line should not change " EPIGEN_LINE_TEST
+" this line should not change " EPIGEN_ADD_LINE_TEST
 
-" as well as this line " should not change " EPIGEN_LINE_TEST
+" as well as this line " should not change " EPIGEN_ADD_LINE_TEST
