@@ -225,4 +225,4 @@ autocmd BufRead *.sh setlocal commentstring=\#\ %s
 autocmd BufRead *Xresources* setlocal commentstring=\!\ %s
 autocmd BufRead *.vimrc setlocal commentstring=\"\ %s
 autocmd BufRead *.bashrc setlocal commentstring=\#\ %s
-autocmd BufRead */.i3/config*,*/i3/config* setlocal commentstring=\#\ %s
+autocmd BufRead *i3*config* setlocal commentstring=\#\ %s
