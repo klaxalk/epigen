@@ -228,3 +228,4 @@ autocmd BufRead *bashrc*,*bashrc setlocal commentstring=\#\ %s
 autocmd BufRead *zshrc*,*zshrc setlocal commentstring=\#\ %s
 autocmd BufRead *i3/config*,*i3*config setlocal commentstring=\#\ %s
 autocmd BufRead *tmux*conf* setlocal commentstring=\#\ %s
+autocmd BufRead *zathura,*zathura* setlocal commentstring=\#\ %s
