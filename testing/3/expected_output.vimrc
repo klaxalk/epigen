@@ -14,12 +14,12 @@ This bracket } should not brake it
 
 
 " EPIGEN_ADD_BLOCK_TEST2 {
-" " EPIGEN_ADD_BLOCK_TEST {
+" " EPIGEN_ADD_BLOCK_TEST ACTIVE {
 
-" " This block should stay commented
-" " ....
+" This block should stay commented
+" ....
 
-" " This bracket } should not brake it
+" This bracket } should not brake it
 
 " " EPIGEN_ADD_BLOCK_TEST }
 " EPIGEN_ADD_BLOCK_TEST2 }

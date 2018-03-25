@@ -15,12 +15,12 @@ This line should stay commented uncommented
 " EPIGEN_DEL_BLOCK_TEST }
 
 " EPIGEN_DEL_BLOCK_TEST2 {
-" " EPIGEN_DEL_BLOCK_TEST {
+" " EPIGEN_DEL_BLOCK_TEST ACTIVE {
 
-" " This block should stay commented
-" " ....
+" " " This block should stay commented
+" " " ....
 
-" " This bracket } should not brake it
+" " " This bracket } should not brake it
 
 " " EPIGEN_DEL_BLOCK_TEST }
 " EPIGEN_DEL_BLOCK_TEST2 }
