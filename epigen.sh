@@ -9,6 +9,8 @@ export EPIGEN_SOURCE_LOC=`( cd "$EPIGEN_SOURCE_LOC" && pwd )`
 
 epigen() {
 
+  DEBUG="1"
+
   HELP="usage: epigen mode [arguments] file_path [block name]
 Modes:
   addition        Addition (used to uncomment blocks which are commented by default)
@@ -81,7 +83,9 @@ Arguments:
         # comment all mode-specific lines (block)
         /usr/bin/vim -u "$VIMRC_PATH" -E -s -c ":delmarks!" -c "%g/^.*\S\+\s\+EPIGEN_ADD_BLOCK_.*\s\+ACTIVE\s\+{\s*$/norm jmak^/ACTIVEB*kmb'agcbc'b'ak^/ACTIVEdaw" -c "wqa" -- "$FILE_PATH"
 
-        echo "Epigen (Addition): set all in the file: $FILE_PATH"
+        if [[ "$DEBUG" == "1" ]]; then
+          echo "Epigen (Addition): set all in the file: $FILE_PATH"
+        fi
 
       elif [[ "$SET" == "1" ]]; then
 
@@ -91,7 +95,9 @@ Arguments:
         # uncomment lines with specific mode (block)
         /usr/bin/vim -u "$VIMRC_PATH" -E -s -c ":delmarks!" -c "%g/^.\+EPIGEN_ADD_BLOCK_$MODE_NAME\>\(\s\<ACTIVE\>\)\@!.*{\s*$/norm f{iACTIVE jmak^/EPIGEN_ADD_BLOCK_$MODE_NAME nkmb'agcbu'b" -c "wqa" -- "$FILE_PATH"
 
-        echo "Epigen (Addition): set $MODE_NAME in the file: $FILE_PATH"
+        if [[ "$DEBUG" == "1" ]]; then
+          echo "Epigen (Addition): set $MODE_NAME in the file: $FILE_PATH"
+        fi
 
       elif [[ "$UNSET" == "1" ]]; then
 
@@ -101,7 +107,9 @@ Arguments:
         # comment all mode-specific lines (block)
         /usr/bin/vim -u "$VIMRC_PATH" -E -s -c ":delmarks!" -c "%g/^.\+EPIGEN_ADD_BLOCK_$MODE_NAME\>\s\+.*\<ACTIVE\>\s*{\s*$/norm jmak^/EPIGEN_ADD_BLOCK_$MODE_NAME nkmb'agcbc'b'ak^f{Bdaw" -c "wqa" -- "$FILE_PATH"
 
-        echo "Epigen (Addition): unset $MODE_NAME in the file: $FILE_PATH"
+        if [[ "$DEBUG" == "1" ]]; then
+          echo "Epigen (Addition): unset $MODE_NAME in the file: $FILE_PATH"
+        fi
 
       else
         echo "$HELP"
@@ -118,7 +126,9 @@ Arguments:
         # uncomment lines with specific mode (block)
         /usr/bin/vim -u "$VIMRC_PATH" -E -s -c ":delmarks!" -c "%g/^.\+\s\+EPIGEN_DEL_BLOCK_.*\s\+ACTIVE\s\+{\s*$/norm f{Bdawjmak^f_*kmb'agcbu'b" -c "wqa" -- "$FILE_PATH"
 
-        echo "Epigen (Reduction): unset all modes in the file: $FILE_PATH"
+        if [[ "$DEBUG" == "1" ]]; then
+          echo "Epigen (Reduction): unset all modes in the file: $FILE_PATH"
+        fi
         
       elif [[ "$SET" == "1" ]]; then
 
@@ -128,7 +138,9 @@ Arguments:
         # comment all mode-specific lines (block)
         /usr/bin/vim -u "$VIMRC_PATH" -E -s -c ":delmarks!" -c "%g/^.\+EPIGEN_DEL_BLOCK_$MODE_NAME\>\(\s\<ACTIVE\>\)\@!.*{\s*$/norm f{iACTIVE ^jmak^/EPIGEN_DEL_BLOCK_$MODE_NAME nkmb'agcbc'b" -c "wqa" -- "$FILE_PATH"
 
-        echo "Epigen (Reduction): set $MODE_NAME in the file: $FILE_PATH"
+        if [[ "$DEBUG" == "1" ]]; then
+          echo "Epigen (Reduction): set $MODE_NAME in the file: $FILE_PATH"
+        fi
 
       elif [[ "$UNSET" == "1" ]]; then
 
@@ -138,7 +150,9 @@ Arguments:
         # uncomment lines with specific mode (block)
         /usr/bin/vim -u "$VIMRC_PATH" -E -s -c ":delmarks!" -c "%g/^.\+EPIGEN_DEL_BLOCK_$MODE_NAME\>\s\+.*\<ACTIVE\>\s*{\s*$/norm ^/ACTIVEdaw^jmak^f_*kmb'agcbu'b" -c "wqa" -- "$FILE_PATH"
 
-        echo "Epigen (Reduction): uset $MODE_NAME in the file: $FILE_PATH"
+        if [[ "$DEBUG" == "1" ]]; then
+          echo "Epigen (Reduction): uset $MODE_NAME in the file: $FILE_PATH"
+        fi
 
       else
         echo "$HELP"
