@@ -9,7 +9,7 @@ export EPIGEN_SOURCE_LOC=`( cd "$EPIGEN_SOURCE_LOC" && pwd )`
 
 epigen() {
 
-  DEBUG="1"
+  DEBUG="0"
 
   HELP="usage: epigen mode [arguments] file_path [block name]
 Modes:
