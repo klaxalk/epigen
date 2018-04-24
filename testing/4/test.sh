@@ -16,7 +16,7 @@ source ../../epigen.sh
 
 # do the thing 
 cp "$INPUT_FILE" "$TEST_OUTPUT_FILE"
-epigen addition -u "$TEST_OUTPUT_FILE" TEST
+epigen -m addition -u -f "$TEST_OUTPUT_FILE" -g TEST
 
 # compare the output
 diff "$TEST_OUTPUT_FILE" "$EXPECTED_OUTPUT_FILE"
