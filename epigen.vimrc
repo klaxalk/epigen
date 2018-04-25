@@ -220,14 +220,14 @@ endif
 " 	[ch]	matches 'c' or 'h'
 " 	[^ch]   match any character but 'c' and 'h'
 
-autocmd BufRead *.py setlocal commentstring=\#\ %s
-autocmd BufRead *.sh setlocal commentstring=\#\ %s
-autocmd BufRead *Xresources* setlocal commentstring=\!\ %s
-autocmd BufRead *vimrc*,*vimrc setlocal commentstring=\"\ %s
-autocmd BufRead *bashrc*,*bashrc setlocal commentstring=\#\ %s
-autocmd BufRead *zshrc*,*zshrc setlocal commentstring=\#\ %s
-autocmd BufRead *i3/config*,*i3*config setlocal commentstring=\#\ %s
-autocmd BufRead *tmux*conf* setlocal commentstring=\#\ %s
-autocmd BufRead *zathura,*zathura* setlocal commentstring=\#\ %s
-autocmd BufRead *i3blocks/* setlocal commentstring=\#\ %s
-autocmd BufRead *.conf,*.conf_git setlocal commentstring=\#\ %s
+" autocmd BufRead *.py setlocal commentstring=\#\ %s
+" autocmd BufRead *.sh setlocal commentstring=\#\ %s
+" autocmd BufRead *Xresources* setlocal commentstring=\!\ %s
+" autocmd BufRead *vimrc*,*vimrc setlocal commentstring=\"\ %s
+" autocmd BufRead *bashrc*,*bashrc setlocal commentstring=\#\ %s
+" autocmd BufRead *zshrc*,*zshrc setlocal commentstring=\#\ %s
+" autocmd BufRead *i3/config*,*i3*config setlocal commentstring=\#\ %s
+" autocmd BufRead *tmux*conf* setlocal commentstring=\#\ %s
+" autocmd BufRead *zathura,*zathura* setlocal commentstring=\#\ %s
+" autocmd BufRead *i3blocks/* setlocal commentstring=\#\ %s
+" autocmd BufRead *.conf,*.conf_git setlocal commentstring=\#\ %s
