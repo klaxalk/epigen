@@ -16,13 +16,13 @@ source ../../epigen.sh
 
 # do the thing 
 cp "$INPUT_FILE" "$TEST_OUTPUT_FILE"
-epigen -m deletion -s -f "$TEST_OUTPUT_FILE" -g TEST3
-epigen -m deletion -s -f "$TEST_OUTPUT_FILE" -g TEST2
-epigen -m deletion -s -f "$TEST_OUTPUT_FILE" -g TEST
+epigen -m deletion -s -f "$TEST_OUTPUT_FILE" -g TEST3 -c '\"\ %s'
+epigen -m deletion -s -f "$TEST_OUTPUT_FILE" -g TEST2 -c '\"\ %s'
+epigen -m deletion -s -f "$TEST_OUTPUT_FILE" -g TEST -c '\"\ %s'
 
-epigen -m deletion -u -f "$TEST_OUTPUT_FILE" -g TEST
-epigen -m deletion -u -f "$TEST_OUTPUT_FILE" -g TEST2
-epigen -m deletion -u -f "$TEST_OUTPUT_FILE" -g TEST3
+epigen -m deletion -u -f "$TEST_OUTPUT_FILE" -g TEST -c '\"\ %s'
+epigen -m deletion -u -f "$TEST_OUTPUT_FILE" -g TEST2 -c '\"\ %s'
+epigen -m deletion -u -f "$TEST_OUTPUT_FILE" -g TEST3 -c '\"\ %s'
 
 # compare the output
 diff "$TEST_OUTPUT_FILE" "$EXPECTED_OUTPUT_FILE"
