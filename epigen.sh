@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# move the path to location of the script
-# EPIGEN_SOURCE_LOC=`dirname "$BASH_SOURCE"`
-# export EPIGEN_SOURCE_LOC=`( cd "$EPIGEN_SOURCE_LOC" && pwd )`
-
 EPIGEN_SOURCE_LOC=`dirname "$BASH_SOURCE"`
 export EPIGEN_SOURCE_LOC=`( cd "$EPIGEN_SOURCE_LOC" && pwd )`
 
@@ -19,12 +15,12 @@ epigen() {
       deletion            Reduction (used to comment blocks which are uncommented by default)
   -s                      Set (uncomments in addition and comments in deletion)
   -u                      Unset (comments in addition and uncomments in deletion)
-  -A                      Apply for all (comments all in addition and uncomments all un deletion)
+  -A                      Reverses to default for all (comments all in addition and uncomments all un deletion)
   -g [name]               Block name 
   -f [path]               File path
   -c [format string]      Custom formatting rule for the file
 
-  'addition' and 'deletion' are mutually exclusive.
+  'addition' and 'deletion' modes are mutually exclusive.
   'set', 'unset' and 'all' operations are mutually exclusive.
   "
 
