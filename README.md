@@ -37,6 +37,31 @@ where **ADD** stands for adding (uncommenting) lines, **DEL** for removing (comm
 **NAME** is the user-defined identifier, which should be constructed preferably out of alphanumeric characters. 
 Epigen is case sensitive.
 In the case of blocks, the commentary will appear on a separate line both before and after the targeted block of text, always commented using the file's one-liner commentary.
+Curly brackets mark the opening and closing line.
+
+Here is the example of one-liner commentary:
+```bash
+# this one-liner will become uncommented # EPIGEN_ADD_LINE_EXAMPLE
+```
+and here of block commentary:
+```bash
+# EPIGEN_ADD_BLOCK_EXAMPLE {
+
+# this line will become uncommented
+ 
+# EPIGEN_ADD_BLOCK_EXAMPLE }
+```
+
+When the block has been modified by Epige, it is market as **ACTIVE**:
+```bash
+this one-liner will become uncommented # EPIGEN_ADD_LINE_EXAMPLE ACTIVE
+ 
+# EPIGEN_ADD_BLOCK_EXAMPLE ACTIVE {
+
+this line will become uncommented
+ 
+# EPIGEN_ADD_BLOCK_EXAMPLE }
+```
 
 ## Defining the one-liner commenting style
 
