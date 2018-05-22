@@ -52,7 +52,7 @@ and here of block commentary:
 # EPIGEN_ADD_BLOCK_EXAMPLE }
 ```
 
-When the block has been modified by Epige, it is market as **ACTIVE**:
+When the block has been modified by Epigen, it is market as **ACTIVE**:
 ```bash
 this one-liner will become uncommented # EPIGEN_ADD_LINE_EXAMPLE ACTIVE
  
