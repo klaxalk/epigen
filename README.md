@@ -11,10 +11,10 @@ By adding special comments containing a keyword, Epigen can **comment** or **unc
 ## Premise
 
 This piece of software allows me to create profiles in linux _dotfiles_.
-The profiles can be maintained within a single branch on git, which significantly streamlines the proces of sharing configuration between various devices and even user, both of which might need minor customizations in othewise mostly universal set of files.
-Personal experience suggests that maintaining minor customizations in git branches lead to often and difficult rebasing and generally slows down the process of pushing new changes from any devices to any other device.
-Thus came the idea to contain each version of the configuration within its appropriate file and activating it by uncommenting only on the device (user) which it is meant for.
-This repository provides the basic building block for such scheme, the commenting/uncommenting script.
+The profiles can be maintained within a single branch on git, which streamlines the proces of sharing configuration between various devices and even users, both of which might need minor customizations in othewise mostly universal set of files.
+The authors personal experience suggests that maintaining minor customizations in git branches often leads to difficult rebasing, which  generally slows down the process of pushing new changes from any devices to any other device, resulting in fractured setup, which just waits for a dedicated "half an hour" of rebasing...
+Thus came the idea to contain each version of the configuration within the file and activating it by uncommenting only on the device (or by a user) which it is meant for.
+This repository provides the basic building block for such utility, the commenting/uncommenting script.
 The full functionality of the profile switching is provided by a wrapper utility [dotprofiler](https://github.com/klaxalk/dotprofiler).
 
 ## Dependencies
@@ -52,9 +52,9 @@ and here of block commentary:
 # EPIGEN_ADD_BLOCK_EXAMPLE }
 ```
 
-When the block has been modified by Epigen, it is market as **ACTIVE**:
+When the block has been modified by Epige, it is market as **ACTIVE**:
 ```bash
-this one-liner will become uncommented # EPIGEN_ADD_LINE_EXAMPLE ACTIVE
+this one-liner will become uncommented # EPIGEN_ADD_LINE_EXAMPLE
  
 # EPIGEN_ADD_BLOCK_EXAMPLE ACTIVE {
 
