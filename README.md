@@ -6,7 +6,7 @@ vim wrapper for file epigenetics
 
 Epigen is a bash script for automation of commenting and uncommenting of sections in Linux configuration files.
 If the file syntax allows one-line comments (as most do), Epigen can handle that.
-By adding special comments containing a keyword, Epigen can *comment* or *uncomment* lines or blocks of code/text.
+By adding special comments containing a keyword, Epigen can **comment** or **uncomment** lines or blocks of code/text.
 
 ## Premise
 
@@ -20,8 +20,8 @@ The full functionality of the profile switching is provided by a wrapper utility
 ## Dependencies
 
 Epigen depends on
-1. *bash*,
-2. *vim* (7.0 or higher).
+1. **bash**,
+2. **vim** (7.0 or higher).
 No special configuration is needed for either of those.
 
 # Usage
@@ -33,8 +33,8 @@ The commentary is constructed as
 ```
 EPIGEN_{ADD,DELETE}_{LINE,BLOCK}_[NAME]
 ```
-where *ADD* stands for adding (uncommenting) lines, *DEL* for removing (commenting out), *LINE* for one-liners and *BLOCK* for multiple lines.
-*NAME* is the user-defined identifier, which should be constructed preferably out of alphanumeric characters. 
+where **ADD** stands for adding (uncommenting) lines, **DEL** for removing (commenting out), **LINE** for one-liners and **BLOCK** for multiple lines.
+**NAME** is the user-defined identifier, which should be constructed preferably out of alphanumeric characters. 
 Epigen is case sensitive.
 In the case of blocks, the commentary will appear on a separate line both before and after the targeted block of text, always commented using the file's one-liner commentary.
 
@@ -42,7 +42,7 @@ In the case of blocks, the commentary will appear on a separate line both before
 
 ## Examples
 
-*Uncommenting blocks and lines of code:*
+**Uncommenting blocks and lines of code:**
 ```bash
 # this one-liner will become uncommented # EPIGEN_ADD_LINE_EXAMPLE
 
@@ -76,7 +76,7 @@ epigen -m addition -A -f file.txt -c '\#\ %s'
 ```
 which unsets all _addition_ changes for all _names_.
 
-*Commenting out blocks and lines of code:*
+**Commenting out blocks and lines of code:**
 ```bash
 this one-liner will become commented # EPIGEN_DEL_LINE_EXAMPLE
 
