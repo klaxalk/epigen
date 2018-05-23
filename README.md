@@ -40,11 +40,11 @@ In the case of blocks, the commentary will appear on a separate line both before
 Curly brackets mark the opening and closing line.
 
 Here is the example of one-liner commentary:
-```bash
+```
 # this one-liner will become uncommented # EPIGEN_ADD_LINE_EXAMPLE
 ```
 and here of block commentary:
-```bash
+```
 # EPIGEN_ADD_BLOCK_EXAMPLE {
 
 # this line will become uncommented
@@ -53,7 +53,7 @@ and here of block commentary:
 ```
 
 When the block has been modified by Epige, it is market as **ACTIVE**:
-```bash
+```
 this one-liner will become uncommented # EPIGEN_ADD_LINE_EXAMPLE
  
 # EPIGEN_ADD_BLOCK_EXAMPLE ACTIVE {
@@ -68,7 +68,7 @@ this line will become uncommented
 ## Examples
 
 **Uncommenting blocks and lines of code:**
-```bash
+```
 # this one-liner will become uncommented # EPIGEN_ADD_LINE_EXAMPLE
 
 # EPIGEN_ADD_BLOCK_EXAMPLE {
@@ -78,7 +78,7 @@ this line will become uncommented
 # EPIGEN_ADD_BLOCK_EXAMPLE }
 ```
 will become
-```bash
+```
 this one-liner will become uncommented # EPIGEN_ADD_LINE_EXAMPLE ACTIVE
 
 # EPIGEN_ADD_BLOCK_EXAMPLE ACTIVE {
@@ -102,7 +102,7 @@ epigen -m addition -A -f file.txt -c '\#\ %s'
 which unsets all _addition_ changes for all _names_.
 
 **Commenting out blocks and lines of code:**
-```bash
+```
 this one-liner will become commented # EPIGEN_DEL_LINE_EXAMPLE
 
 # EPIGEN_DEL_BLOCK_EXAMPLE {
@@ -112,7 +112,7 @@ this line will become uncommented
 # EPIGEN_DEL_BLOCK_EXAMPLE }
 ```
 will become
-```bash
+```
 # this one-liner will become commented # EPIGEN_DEL_LINE_EXAMPLE ACTIVE
 
 # EPIGEN_DEL_BLOCK_EXAMPLE ACTIVE {
