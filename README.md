@@ -1,6 +1,6 @@
 # Epigen
 
-vim wrapper for file epigenetics (WikiPedia: Epigenetics is the study of changes in organisms caused by modification of gene expression rather than alteration of the genetic code itself.)
+vim wrapper for file epigenetics (Wikipedia: Epigenetics is the study of changes in organisms caused by modification of gene expression rather than alteration of the genetic code itself.)
 
 ## Description
 
