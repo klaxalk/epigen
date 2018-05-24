@@ -175,7 +175,7 @@ which unsets all _deletion_ changes for all _names_.
 ### Logical OR
 
 Epigen also supports logical OR in both **addition** and **deletion** mode.
-Multiple Epigen keywords (e.g. **EXAMPLE** and **OTHER_OPTION**) can be simple aggregated together, as:
+Multiple Epigen keywords (e.g. _EXAMPLE_ and _OTHER_OPTION_) can be simple aggregated together, as:
 
 ```
 # this one-liner will become uncommented # EPIGEN_ADD_LINE_EXAMPLE EPIGEN_ADD_LINE_OTHER_OPTION
