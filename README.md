@@ -1,6 +1,6 @@
 # Epigen
 
-vim wrapper for file epigenetics
+vim wrapper for file epigenetics (WikiPedia: Epigenetics is the study of changes in organisms caused by modification of gene expression rather than alteration of the genetic code itself.)
 
 ## Description
 
@@ -24,6 +24,8 @@ Epigen depends on
 1. **bash**,
 2. **vim** (7.0 or higher).
 No special configuration is needed for either of those.
+
+Epigen utilizes Tim Pope's [vim-commentary](https://github.com/tpope/vim-commentary) vim plugin, which has been integrated in the Epigen's .vimrc.
 
 # Usage
 
@@ -57,7 +59,7 @@ EPIGEN_{ADD,DELETE}_{LINE,BLOCK}_[NAME]
 where **ADD** stands for adding (uncommenting) lines, **DEL** for removing (commenting out), **LINE** for one-liners and **BLOCK** for multiple lines.
 **NAME** is the user-defined identifier, which should be constructed preferably out of alphanumeric characters. 
 Epigen is case sensitive.
-In the case of blocks, the commentary will appear on a separate line both before and after the targeted block of text, always commented using the file's one-liner commentary.
+In the case of blocks, the keyword lines (opening, closing) appear both before and after the targeted block of text, always commented using the file's one-liner commentary.
 Curly brackets mark the opening and closing line.
 
 Here is the example of one-liner commentary:
@@ -75,7 +77,7 @@ and here of block commentary:
 
 When the block has been modified by Epige, it is market as **ACTIVE**:
 ```
-this one-liner will become uncommented # EPIGEN_ADD_LINE_EXAMPLE
+this one-liner will become uncommented # EPIGEN_ADD_LINE_EXAMPLE ACTIVE
  
 # EPIGEN_ADD_BLOCK_EXAMPLE ACTIVE {
 
@@ -84,7 +86,25 @@ this line will become uncommented
 # EPIGEN_ADD_BLOCK_EXAMPLE }
 ```
 
-## Defining the one-liner commenting style
+## Definition of the commenting style
+
+Epigen utilizes Tim Pope's [vim-commentary](https://github.com/tpope/vim-commentary) plugin to handle the commenting and uncommenting.
+If it does not recognize the particular filetype automatically, Epigen can be forced to use a defined commenting style.
+The style is defined by a string, where **%s** stands for the "content" of the line and the surrounding characters define the "commenting" characters.
+Here are some examples:
+
+| file type   | commentary string |
+|-------------|-------------------|
+| bash        | ```\#\ %s```      |
+| vimscript   | ```\"\ %s```      |
+| .Xresources | ```\!\ %s```      |
+| C++         | ```\/\/ %s```     |
+
+The commentary string can be supplied via the **-c** parameter, e.g., as:
+
+```bash
+epigen -m addition -s -f file.txt -g EXAMPLE -c '\#\ %s'
+```
 
 ## Examples
 
@@ -151,3 +171,32 @@ or
 epigen -m deletion -A -f file.txt -c '\#\ %s'
 ```
 which unsets all _deletion_ changes for all _names_.
+
+### Logical OR
+
+Epigen also supports logical OR in both **addition** and **deletion** mode.
+Multiple Epigen keywords (e.g. **EXAMPLE** and **OTHER_OPTION**) can be simple aggregated together, as:
+
+```
+# this one-liner will become uncommented # EPIGEN_ADD_LINE_EXAMPLE EPIGEN_ADD_LINE_OTHER_OPTION
+ 
+# EPIGEN_ADD_BLOCK_EXAMPLE EPIGEN_ADD_LINE_OTHER_OPTION {
+
+# this line will become uncommented when EXAMPLE or/and OTHER_OPTION are ACTIVE
+ 
+# EPIGEN_ADD_BLOCK_EXAMPLE EPIGEN_ADD_LINE_OTHER_OPTION }
+```
+
+### Logical AND
+
+Logical AND in supported only in the **addition** mode, by nesting multiple blocks together, as:
+
+```
+# EPIGEN_ADD_BLOCK_EXAMPLE1 {
+# # EPIGEN_ADD_BLOCK_EXAMPLE2 {
+
+# # this line will become uncommented if EXAMPLE1 and EXAMPLE2 are ACTIVE simultaneously
+ 
+# # EPIGEN_ADD_BLOCK_EXAMPLE2 }
+# EPIGEN_ADD_BLOCK_EXAMPLE1 }
+```
