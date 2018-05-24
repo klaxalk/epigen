@@ -12,7 +12,7 @@ EXTENSION=".vimrc"
 source ../../epigen.sh
 
 # do the thing 
-for i in {1..2}; do
+for i in {1..3}; do
 
   INPUT_FILE="input$i$EXTENSION"
   EXPECTED_OUTPUT_FILE="expected_output$i$EXTENSION"
@@ -24,6 +24,8 @@ for i in {1..2}; do
     epigen -m addition -s -g "TEST1" -f "$TEST_OUTPUT_FILE" -c '\"\ %s'
   elif [[ "$i" == 2 ]]; then
     epigen -m addition -s -g "TEST1" -f "$TEST_OUTPUT_FILE" -c '\1\1\ %s'
+  elif [[ "$i" == 3 ]]; then
+    epigen -m addition -s -g "TEST1" -f "$TEST_OUTPUT_FILE" -c '\/\/\ %s'
   fi
 
   # compare the output

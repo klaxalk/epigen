@@ -98,7 +98,7 @@ Here are some examples:
 | bash        | ```\#\ %s```      |
 | vimscript   | ```\"\ %s```      |
 | .Xresources | ```\!\ %s```      |
-| C++         | ```\/\/ %s```     |
+| C++         | ```\/\/\ %s```    |
 
 The commentary string can be supplied via the **-c** parameter, e.g., as:
 
