@@ -5,8 +5,8 @@ vim wrapper for file epigenetics (Wikipedia: Epigenetics is the study of changes
 ## Description
 
 Epigen is a bash script for automation of commenting and uncommenting of sections in Linux configuration files.
-If the file syntax allows one-line comments (as most do), Epigen can handle that.
-By adding special comments containing a keyword, Epigen can **comment** or **uncomment** lines or blocks of code/text.
+If the file syntax allows one-line comments (as most do), epigen can handle that.
+By adding special comments containing a keyword, epigen can **comment** or **uncomment** lines or blocks of code/text.
 
 ## Premise
 
@@ -25,7 +25,7 @@ Epigen depends on
 2. **vim** (7.0 or higher).
 No special configuration is needed for either of those.
 
-Epigen utilizes Tim Pope's [vim-commentary](https://github.com/tpope/vim-commentary) vim plugin, which has been integrated in the Epigen's .vimrc.
+Epigen utilizes Tim Pope's [vim-commentary](https://github.com/tpope/vim-commentary) vim plugin, which has been integrated in the epigen's .vimrc.
 
 # Usage
 
@@ -89,7 +89,7 @@ this line will become uncommented
 ## Definition of the commenting style
 
 Epigen utilizes Tim Pope's [vim-commentary](https://github.com/tpope/vim-commentary) plugin to handle the commenting and uncommenting.
-If it does not recognize the particular filetype automatically, Epigen can be forced to use a defined commenting style.
+If it does not recognize the particular filetype automatically, epigen can be forced to use a defined commenting style.
 The style is defined by a string, where **%s** stands for the "content" of the line and the surrounding characters define the "commenting" characters.
 Here are some examples:
 
@@ -175,7 +175,7 @@ which unsets all _deletion_ changes for all _names_.
 ### Logical OR
 
 Epigen also supports logical OR in both **addition** and **deletion** mode.
-Multiple Epigen keywords (e.g. _EXAMPLE_ and _OTHER_OPTION_) can be simple aggregated together, as:
+Multiple epigen keywords (e.g. _EXAMPLE_ and _OTHER_OPTION_) can be simple aggregated together, as:
 
 ```
 # this one-liner will become uncommented # EPIGEN_ADD_LINE_EXAMPLE EPIGEN_ADD_LINE_OTHER_OPTION
