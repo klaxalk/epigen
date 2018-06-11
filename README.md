@@ -17,7 +17,7 @@ The authors personal experience suggests that maintaining minor customizations i
 Thus appeared the idea to contain each version of the configuration within the file.
 The section will be activated by uncommenting it only on the device (or by a user) which it is meant for.
 This repository provides the basic building block for such utility, the commenting and uncommenting.
-The full functionality of the described profile switching is provided by the wrapper utility [dotprofiler](https://github.com/klaxalk/dotprofiler).
+The full functionality of the described profile switching is provided by the wrapper utility [profile_manager](https://github.com/klaxalk/profile_manager).
 
 ## Dependencies
 
