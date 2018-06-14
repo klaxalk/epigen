@@ -201,3 +201,11 @@ Logical AND in supported only in the **addition** mode, by nesting multiple bloc
 # # EPIGEN_ADD_BLOCK_EXAMPLE2 }
 # EPIGEN_ADD_BLOCK_EXAMPLE1 }
 ```
+
+# Syntax highlighting of Epigen keywords
+
+The file **syntax/epigen.vim** contains basic highlighting for the keywords.
+It can be placed in `.vim/after/syntax` and sourced at the and of your .vimrc as
+```vim
+au BufNewFile,BufRead * so ~/.vim/after/syntax/epigen.vim
+```
