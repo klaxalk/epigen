@@ -204,8 +204,17 @@ Logical AND in supported only in the **addition** mode, by nesting multiple bloc
 
 # Syntax highlighting of Epigen keywords
 
-The file **syntax/epigen.vim** contains basic highlighting for the keywords.
-It can be placed in `.vim/after/syntax` and sourced at the and of your .vimrc as
+Following code can be placed into your `.vimrc` to enable basic syntax highlighting:
 ```vim
-au BufNewFile,BufRead * so ~/.vim/after/syntax/epigen.vim
+function SetEpigenSyntax()
+  syn match	epigenOpeningMatch	/.\+EPIGEN_.\+(ACTIVE)\+.\+/ containedin=ALL contained
+  syn match	epigenActiveSubmatch	/ACTIVE/ containedin=ALL,epigenOpeningMatch contained
+  syn match	epigenAdd	/\<\zsEPIGEN_ADD_.\+\ze\>.*/ containedin=ALL,epigenOpeningMatch contained
+  syn match	epigenDel	/\<\zsEPIGEN_DEL_.\+\ze\>.*/ containedin=ALL,epigenOpeningMatch contained
+
+  hi def link epigenActiveSubmatch Error
+  hi def link epigenAdd Macro
+  hi def link epigenDel Constant
+endfunction
+autocmd BufNewFile,BufRead * call SetEpigenSyntax()
 ```
