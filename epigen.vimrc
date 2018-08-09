@@ -9,6 +9,12 @@ set autoindent                  " copy the indention from the last line
 set smartindent                 " sometimes indent extra indention
 set tabstop=2                   " width of the tab character
 
+set nowrap
+set nolinebreak
+set nolist  " list disables linebreak
+set wrapmargin=200
+set textwidth=200
+
 set noswapfile
 
 " Here starts Tim Pop's vim-commentary, modified to support
