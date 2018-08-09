@@ -12,8 +12,8 @@ set tabstop=2                   " width of the tab character
 set nowrap
 set nolinebreak
 set nolist  " list disables linebreak
-set wrapmargin=200
-set textwidth=200
+set wrapmargin=400
+set textwidth=400
 
 set noswapfile
 
