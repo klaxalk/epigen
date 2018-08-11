@@ -158,10 +158,10 @@ epigen() {
       if [[ "$ALL" == "1" ]]; then
 
         # comment all mode-specific lines (line)
-        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -E -s -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.*\s\+EPIGEN_ADD_LINE_.\+\s\+ACTIVE\s*$/norm gclc^/ACTIVEdaw" -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
+        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -nEs -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.*\s\+EPIGEN_ADD_LINE_.\+\s\+ACTIVE\s*$/norm gclc^/ACTIVEdaw" -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
 
         # comment all mode-specific lines (block)
-        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -E -s -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.*\S\+\s\+EPIGEN_ADD_BLOCK_.*\s\+ACTIVE\s\+{\s*$/norm jmak^/ACTIVEB*kmb'agcbc'b'ak^/ACTIVEdaw" -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
+        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -nEs -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.*\S\+\s\+EPIGEN_ADD_BLOCK_.*\s\+ACTIVE\s\+{\s*$/norm jmak^/ACTIVEB*kmb'agcbc'b'ak^/ACTIVEdaw" -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
 
         if [[ "$DEBUG" == "1" ]]; then
           echo "Epigen (Addition): set all in the file: $FILE_PATH"
@@ -170,10 +170,10 @@ epigen() {
       elif [[ "$SET" == "1" ]]; then
 
         # uncomment lines with specific mode (line)
-        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -E -s -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+EPIGEN_ADD_LINE_$GEN_NAME\>\(\s\<ACTIVE\>\)\@!.*$/norm gclu\$Bea ACTIVE"  -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
+        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -nEs -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+EPIGEN_ADD_LINE_$GEN_NAME\>\(\s\<ACTIVE\>\)\@!.*$/norm gclu\$Bea ACTIVE"  -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
 
         # uncomment lines with specific mode (block)
-        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -E -s -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+EPIGEN_ADD_BLOCK_$GEN_NAME\>\(\s\<ACTIVE\>\)\@!.*{\s*$/norm f{iACTIVE jmak^/EPIGEN_ADD_BLOCK_$GEN_NAME nkmb'agcbu'b" -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
+        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -nEs -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+EPIGEN_ADD_BLOCK_$GEN_NAME\>\(\s\<ACTIVE\>\)\@!.*{\s*$/norm f{iACTIVE jmak^/EPIGEN_ADD_BLOCK_$GEN_NAME nkmb'agcbu'b" -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
 
         if [[ "$DEBUG" == "1" ]]; then
           echo "Epigen (Addition): set $GEN_NAME in the file: $FILE_PATH"
@@ -182,10 +182,10 @@ epigen() {
       elif [[ "$UNSET" == "1" ]]; then
 
         # comment all mode-specific lines (line)
-        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -E -s -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+EPIGEN_ADD_LINE_$GEN_NAME\>\s\+.*\<ACTIVE\>.*$/norm gclc^/ACTIVEdaw" -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
+        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -nEs -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+EPIGEN_ADD_LINE_$GEN_NAME\>\s\+.*\<ACTIVE\>.*$/norm gclc^/ACTIVEdaw" -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
 
         # comment all mode-specific lines (block)
-        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -E -s -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+EPIGEN_ADD_BLOCK_$GEN_NAME\>\s\+.*\<ACTIVE\>\s*{\s*$/norm jmak^/EPIGEN_ADD_BLOCK_$GEN_NAME nkmb'agcbc'b'ak^f{Bdaw" -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
+        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -nEs -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+EPIGEN_ADD_BLOCK_$GEN_NAME\>\s\+.*\<ACTIVE\>\s*{\s*$/norm jmak^/EPIGEN_ADD_BLOCK_$GEN_NAME nkmb'agcbc'b'ak^f{Bdaw" -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
 
         if [[ "$DEBUG" == "1" ]]; then
           echo "Epigen (Addition): unset $GEN_NAME in the file: $FILE_PATH"
@@ -201,10 +201,10 @@ epigen() {
       if [[ "$ALL" == "1" ]]; then
 
         # uncomment all mode-specific lines (line)
-        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -E -s -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+\s\+EPIGEN_DEL_LINE_.\+\s\+ACTIVE\s*$/norm gclu^/ACTIVEdaw"  -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
+        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -nEs -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+\s\+EPIGEN_DEL_LINE_.\+\s\+ACTIVE\s*$/norm gclu^/ACTIVEdaw"  -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
 
         # uncomment lines with specific mode (block)
-        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -E -s -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+\s\+EPIGEN_DEL_BLOCK_.*\s\+ACTIVE\s\+{\s*$/norm f{Bdawjmak^f_*kmb'agcbu'b" -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
+        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -nEs -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+\s\+EPIGEN_DEL_BLOCK_.*\s\+ACTIVE\s\+{\s*$/norm f{Bdawjmak^f_*kmb'agcbu'b" -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
 
         if [[ "$DEBUG" == "1" ]]; then
           echo "Epigen (Reduction): unset all modes in the file: $FILE_PATH"
@@ -213,10 +213,10 @@ epigen() {
       elif [[ "$SET" == "1" ]]; then
 
         # comment all mode-specific lines (line)
-        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -E -s -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+EPIGEN_DEL_LINE_$GEN_NAME\>\(\s\<ACTIVE\>\)\@!.*$/norm \$Bea ACTIVEgclc" -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
+        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -nEs -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+EPIGEN_DEL_LINE_$GEN_NAME\>\(\s\<ACTIVE\>\)\@!.*$/norm \$Bea ACTIVEgclc" -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
 
         # comment all mode-specific lines (block)
-        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -E -s -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+EPIGEN_DEL_BLOCK_$GEN_NAME\>\(\s\<ACTIVE\>\)\@!.*{\s*$/norm f{iACTIVE ^jmak^/EPIGEN_DEL_BLOCK_$GEN_NAME nkmb'agcbc'b" -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
+        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -nEs -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+EPIGEN_DEL_BLOCK_$GEN_NAME\>\(\s\<ACTIVE\>\)\@!.*{\s*$/norm f{iACTIVE ^jmak^/EPIGEN_DEL_BLOCK_$GEN_NAME nkmb'agcbc'b" -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
 
         if [[ "$DEBUG" == "1" ]]; then
           echo "Epigen (Reduction): set $GEN_NAME in the file: $FILE_PATH"
@@ -225,10 +225,10 @@ epigen() {
       elif [[ "$UNSET" == "1" ]]; then
 
         # uncomment lines with specific mode (line)
-        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -E -s -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+EPIGEN_DEL_LINE_$GEN_NAME\>\s\+.*\<ACTIVE\>.*$/norm gclu^/ACTIVEdaw"  -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
+        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -nEs -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+EPIGEN_DEL_LINE_$GEN_NAME\>\s\+.*\<ACTIVE\>.*$/norm gclu^/ACTIVEdaw"  -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
 
         # uncomment lines with specific mode (block)
-        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -E -s -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+EPIGEN_DEL_BLOCK_$GEN_NAME\>\s\+.*\<ACTIVE\>\s*{\s*$/norm ^/ACTIVEdaw^jmak^f_*kmb'agcbu'b" -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
+        $VIM_BIN -u "$VIMRC_PATH" $HEADLESS -nEs -c "$CUSTOM_FORMAT" -c ":delmarks!" -c "%g/^.\+EPIGEN_DEL_BLOCK_$GEN_NAME\>\s\+.*\<ACTIVE\>\s*{\s*$/norm ^/ACTIVEdaw^jmak^f_*kmb'agcbu'b" -c ":delmarks!" -c "wqa" -- "$FILE_PATH"
 
         if [[ "$DEBUG" == "1" ]]; then
           echo "Epigen (Reduction): uset $GEN_NAME in the file: $FILE_PATH"
