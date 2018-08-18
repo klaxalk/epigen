@@ -7,7 +7,7 @@ cd "$MY_PATH"
 
 echo ""
 
-for i in {1..25}; do
+for i in {1..26}; do
 
   echo "Running test $i"
   bash "$i/test.sh"
