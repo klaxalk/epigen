@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 EPIGEN_SOURCE_LOC=`dirname "$BASH_SOURCE"`
 export EPIGEN_SOURCE_LOC=`( cd "$EPIGEN_SOURCE_LOC" && pwd )`

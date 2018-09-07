@@ -22,7 +22,7 @@ The full functionality of the described profile switching is provided by the wra
 ## Dependencies
 
 Epigen depends on
-1. **bash**,
+1. POSIX shell (/bin/sh)
 2. **vim** (7.0 or higher).
 No special configuration is needed for either of those.
 
